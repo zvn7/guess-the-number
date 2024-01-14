@@ -1,0 +1,78 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #3498db, #8e44ad);
+    color: #000; /* Set text color to black */
+}
+
+.game-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
+.game-board button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-board button:hover {
+    background-color: #2980b9;
+}
+
+.game-board h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.stats-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 15px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.stats-button:hover {
+    background-color: #c0392b;
+}
+
+.instructions {
+    background-color: #ecf0f1;
+    border-radius: 10px;
+}
+
+.instructions h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.instructions-list {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.instructions-list li {
+    margin-bottom: 10px;
+}
+
+.instructions-list i {
+    color: #e74c3c;
+}

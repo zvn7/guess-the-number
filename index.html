@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container mx-auto p-8">
+        <h1 class="game-title">Permainan Tebak Angka '123'</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <!-- Local Stats -->
+            <div class="bg-white p-6 rounded shadow-md">
+                <h2 class="text-xl font-semibold mb-4">Local Stats</h2>
+                <hr class="mb-4">
+
+                <div id="all-local-stats">
+                    <div class="local-stat-item">
+                        <h3 class="text-lg">Jumlah permainan yang berhasil dimenangkan:</h3>
+                        <h3 id="local-total-victory-field" class="font-bold text-2xl"></h3>
+                    </div>
+                    <div class="local-stat-item">
+                        <h3 class="text-lg">Jumlah tebakan salah terbanyak sekali main:</h3>
+                        <h3 id="local-maximum-attempt-field" class="font-bold text-2xl"></h3>
+                    </div>
+                    <button class="stats-button">Hapus semua data</button>
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="bg-white p-6 rounded shadow-md game-board">
+                <h2 class="text-xl font-semibold mb-4">Game Board</h2>
+                <hr class="mb-4">
+
+                <div id="before-game-display">
+                    <h3 class="text-lg">Tekan tombol "Play" di bawah jika sudah siap</h3>
+                    <button class="bg-green-500 text-white py-1 px-3 rounded" id="play-button">Bermain</button>
+                </div>
+
+                <div id="during-game-display" hidden>
+                    <h3 class="text-lg">Silahkan menebak angka!</h3>
+                    <h3 class="text-lg">Jawaban Anda:</h3>
+                    <h1 class="text-4xl font-bold mb-5">
+                        "<u><span id="session-user-answer-field"></span></u>"
+                    </h1>
+                    <button id="answer-1-button">1</button>
+                    <button id="answer-2-button">2</button>
+                    <button id="answer-3-button">3</button>
+                    <h3 class="text-lg mt-5">"<span id="session-user-wrong-answer-field"></span>" bukanlah jawabannya...</h3>
+                    <br /><br />
+                </div>
+
+                <div id="after-game-display" hidden>
+                    <h3 class="text-lg">Selamat Tebakan Anda benar!</h3>
+                    <h3 class="text-lg">Jawabannya adalah:</h3>
+                    <h1 class="text-4xl font-bold">"<span id="session-true-answer-field"></span>"</h1>
+                    <h3 class="text-lg"><i></i>Refresh halaman ini untuk mencoba lagi</h3>
+                </div>
+            </div>
+
+            <!-- Game Session Stats -->
+            <div class="bg-white p-6 rounded shadow-md">
+                <h2 class="text-xl font-semibold mb-4">Game Session Stats</h2>
+                <hr class="mb-4">
+
+                <div id="all-session-stats">
+                    <div class="session-stat-item">
+                        <h3 class="text-lg">Jumlah Tebakan Salah:</h3>
+                        <h3 id="session-user-attempts-amount-field" class="font-bold text-2xl"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions p-6 rounded shadow-md mt-8">
+            <h2 class="text-2xl font-semibold text-center mb-4">Cara bermain</h2>
+            <hr class="mb-4">
+
+            <h3 class="text-lg text-center mb-4">Selamat datang ke permainan tebak angka, berikut instruksi-nya:</h3>
+
+            <ul class="instructions-list">
+                <li class="mb-2">
+                    Anda harus mencari kombinasi angka yang terdiri dari angka "1", "2", dan "3", misalnya "231" dan "123".
+                </li>
+                <li class="mb-2">
+                    Angka yang ditebak hanya memiliki panjang 3 karakter saja, sehingga kombinasi seperti "1231" tidak akan
+                    menjadi jawaban.
+                </li>
+                <li class="mb-2">
+                    Sebuah angka hanya akan muncul sekali dan hanya sekali, sehingga kombinasi seperti "223" maupun "111" tidak
+                    akan menjadi jawaban.
+                </li>
+                <li class="mb-2">
+                    <i class="fas fa-smile"></i> Have fun and don't cheat!
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
